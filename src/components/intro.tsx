@@ -56,7 +56,7 @@ export default function Intro() {
         <b className="text-slate-800">
           desenvolvedor <i>front-end</i>{" "}
         </b>
-        com foco em <b className="text-slate-800">React (Nextjs).</b>
+        com foco em <b className="text-slate-800">React (Next.js).</b>
       </motion.h1>
 
       <motion.div
