@@ -15,12 +15,10 @@ const About = () => {
       <p className="mb-3">
         Graduado em Ciência da Computação e atuando como desenvolvedor
         front-end.
-      </p>
-      <blockquote>
-        Criar, depurar, centralizar, ler documentação, procurar soluções e
-        resolver problemas. Tudo vale a pena quando nossos objetivos são
+        <br /> Criar, depurar, centralizar, ler documentação, procurar soluções
+        e resolver problemas. Tudo vale a pena quando nossos objetivos são
         alcançados.
-      </blockquote>
+      </p>
     </motion.section>
   );
 };
