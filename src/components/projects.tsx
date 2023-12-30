@@ -21,6 +21,8 @@ const projectsData = [
       "React Color",
     ],
     imageURL: projectModimisa,
+    demo: "https://eltonjcs.github.io/modimisa",
+    repository: "https://github.com/EltonJCS/modimisa",
   },
   {
     title: "MyLinks",
@@ -28,6 +30,8 @@ const projectsData = [
       "Site agregador de links que permite o compartilhamento de redes sociais, sites e outros links importantes em um único lugar.",
     tags: ["Java", "Spark"],
     imageURL: projectMyLinks,
+    demo: "https://eltonjcs.github.io/MyLinks",
+    repository: "https://github.com/EltonJCS/MyLinks",
   },
   {
     title: "java_restAPI",
@@ -35,6 +39,8 @@ const projectsData = [
       "API REST em Java com funcionalidades de CRUD, utilizando o microframework Spark.",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
     imageURL: projectJavaRestAPI,
+    demo: "",
+    repository: "https://github.com/EltonJCS/java_restAPI_clientCRUD",
   },
 ] as const;
 
