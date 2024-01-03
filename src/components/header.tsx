@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { links } from "../../lib/data";
+import { useActiveSectionContext } from "../../context/active-section-context";
 
 const Header = () => {
+  const { activeSection, setActiveSection } = useActiveSectionContext();
+
   return (
     <header className="relative z-50">
       <motion.div
@@ -24,21 +27,20 @@ const Header = () => {
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
-                className={`text-slate-950" flex w-full items-center justify-center px-3 py-3 transition hover:text-slate-950 `}
-                // ${
-                //   activeSection.name === link.name ? "text-slate-950" : ""
-                // }
+                className={`text-slate-950" flex w-full items-center justify-center px-3 py-3 transition hover:text-slate-950 ${
+                  activeSection === link.name ? "text-slate-950" : ""
+                }`}
                 href={link.hash}
-                // onClick={() => setActiveSection(link)}
+                onClick={() => setActiveSection(link.name)}
               >
                 {link.name}
-                {/* {link.name === activeSection.name && (
+                {link.name === activeSection && (
                   <motion.span
                     className="absolute inset-0 -z-10 rounded-full bg-slate-200 shadow-inner"
                     layoutId="activeSection"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   ></motion.span>
-                )} */}
+                )}
               </Link>
             </motion.li>
           ))}
