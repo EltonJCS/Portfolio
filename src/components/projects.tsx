@@ -1,6 +1,5 @@
 "use client";
 import { Fragment, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 
 import projectModimisa from "../../public/images/project-Modimisa.jpg";
 import projectMyLinks from "../../public/images/project-MyLinks.jpg";
@@ -8,7 +7,7 @@ import projectJavaRestAPI from "../../public/images/project-java_restAPI.jpg";
 
 import SectionHeading from "./section-heading";
 import Project from "./project";
-import { useActiveSectionContext } from "../../context/active-section-context";
+import { useSectionInView } from "../../lib/hooks";
 
 const projectsData = [
   {
@@ -48,14 +47,7 @@ const projectsData = [
 ] as const;
 
 const Projects = () => {
-  const { ref, inView } = useInView({ threshold: 0.4 });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Projetos");
-    }
-  }, [inView, timeOfLastClick]);
+  const { ref } = useSectionInView("Projetos", 0.4);
 
   return (
     <section ref={ref} id="projetos" className="scroll-mt-28">
