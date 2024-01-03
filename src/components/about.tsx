@@ -8,13 +8,13 @@ import { useActiveSectionContext } from "../../context/active-section-context";
 
 const About = () => {
   const { ref, inView } = useInView({ threshold: 0.8 });
-  const { setActiveSection } = useActiveSectionContext();
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView) {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection("Sobre");
     }
-  }, [inView]);
+  }, [inView, timeOfLastClick]);
 
   return (
     <motion.section
