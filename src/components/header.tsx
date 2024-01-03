@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+type NavLink = {
+  name: string;
+  hash: string;
+};
 
 const links = [
   {
@@ -31,6 +37,8 @@ const links = [
 ] as const;
 
 const Header = () => {
+  const [activeSection, setActiveSection] = useState<NavLink>(links[0]);
+
   return (
     <header className="relative z-50">
       <motion.div
@@ -42,16 +50,26 @@ const Header = () => {
         <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
           {links.map((link) => (
             <motion.li
-              className="flex h-3/4 items-center justify-center"
+              className="relative flex h-3/4 items-center justify-center"
               key={link.hash}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
-                className="flex w-full items-center justify-center px-3 py-3 transition hover:text-slate-950"
+                className={`text-slate-950" flex w-full items-center justify-center px-3 py-3 transition hover:text-slate-950 ${
+                  activeSection.name === link.name ? "text-slate-950" : ""
+                }`}
                 href={link.hash}
+                onClick={() => setActiveSection(link)}
               >
                 {link.name}
+                {link.name === activeSection.name && (
+                  <motion.span
+                    className="absolute inset-0 -z-10 rounded-full bg-slate-200 shadow-inner"
+                    layoutId="activeSection"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  ></motion.span>
+                )}
               </Link>
             </motion.li>
           ))}
