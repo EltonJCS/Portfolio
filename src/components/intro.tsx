@@ -3,10 +3,23 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "../../context/active-section-context";
+import { useEffect } from "react";
 
 export default function Intro() {
+  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Início");
+    }
+  }, [inView]);
+
   return (
     <section
+      ref={ref}
       id="início"
       className="mb-28 max-w-[50rem] scroll-mt-80 text-center sm:mb-0"
     >

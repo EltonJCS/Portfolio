@@ -1,11 +1,24 @@
 "use client";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 import SectionHeading from "./section-heading";
+import { useActiveSectionContext } from "../../context/active-section-context";
 
 const About = () => {
+  const { ref, inView } = useInView({ threshold: 0.8 });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Sobre");
+    }
+  }, [inView]);
+
   return (
     <motion.section
+      ref={ref}
       id="sobre"
       className="mb-28 max-w-[45rem] scroll-mt-28 text-center leading-8 sm:mb-40"
       initial={{ opacity: 0, y: 100 }}

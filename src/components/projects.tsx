@@ -1,4 +1,6 @@
-import { Fragment } from "react";
+"use client";
+import { Fragment, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 import projectModimisa from "../../public/images/project-Modimisa.jpg";
 import projectMyLinks from "../../public/images/project-MyLinks.jpg";
@@ -6,6 +8,7 @@ import projectJavaRestAPI from "../../public/images/project-java_restAPI.jpg";
 
 import SectionHeading from "./section-heading";
 import Project from "./project";
+import { useActiveSectionContext } from "../../context/active-section-context";
 
 const projectsData = [
   {
@@ -45,8 +48,17 @@ const projectsData = [
 ] as const;
 
 const Projects = () => {
+  const { ref, inView } = useInView({ threshold: 0.4 });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Projetos");
+    }
+  }, [inView]);
+
   return (
-    <section id="projetos" className="scroll-mt-28">
+    <section ref={ref} id="projetos" className="scroll-mt-28">
       <SectionHeading title={"Meus projetos"} />
       <div>
         {projectsData.map((project, index) => (

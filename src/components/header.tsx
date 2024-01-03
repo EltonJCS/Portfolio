@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 import { links } from "../../lib/data";
 import { useActiveSectionContext } from "../../context/active-section-context";
