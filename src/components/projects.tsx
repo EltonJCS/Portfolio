@@ -46,7 +46,7 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section>
+    <section id="projetos" className="scroll-mt-28">
       <SectionHeading title={"Meus projetos"} />
       <div>
         {projectsData.map((project, index) => (

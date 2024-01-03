@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="!scroll-smooth">
       <body
         className={`${inter.className}  relative overscroll-none bg-slate-200 pt-28 text-slate-950 sm:pt-36`}
       >
