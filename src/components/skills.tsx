@@ -10,14 +10,14 @@ const skillsData = [
   "TypeScript",
   "JavaScript",
   "Tailwind",
-  "Styled Components",
   "Node.js",
   "MySQL",
+  "Styled Components",
   "CSS",
   "HTML",
-  "Framer Motion",
-  "Git",
+  "Git/Github",
   "Figma",
+  "Framer Motion",
 ] as const;
 
 const Skills = () => {
