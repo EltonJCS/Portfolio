@@ -1,6 +1,6 @@
 ## Sobre | <i>About</i>
-<p>Meu portfólio.</p>
-<p><i>My portfolio.</i></p>
+<p>Portfólio com meus projetos, experiência e habilidades.</p>
+<p><i>Portfolio with my projects, experience and skills.</i></p>
 
 <br>
 
