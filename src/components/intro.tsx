@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useSectionInView } from "../../lib/hooks";
+import { useActiveSectionContext } from "../../context/active-section-context";
 
 export default function Intro() {
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref } = useSectionInView("Início", 0.5);
 
   return (
@@ -72,8 +74,12 @@ export default function Intro() {
         transition={{ delay: 0.5 }}
       >
         <Link
-          href="#contact"
+          href="#contato"
           className="group flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-white shadow-xl outline-none transition hover:scale-110 hover:bg-slate-800 active:scale-105 active:bg-slate-950"
+          onClick={() => {
+            setActiveSection("Contato");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Entrar em contato
           <Image
@@ -86,7 +92,7 @@ export default function Intro() {
           />
         </Link>
 
-        <a className="group flex cursor-pointer items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-slate-900 shadow-xl  outline-none transition active:scale-105 active:bg-slate-400">
+        <a className="group flex cursor-pointer items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-slate-900 shadow-xl outline-none transition hover:scale-110 focus:scale-110 active:scale-105 active:bg-slate-300">
           Currículo
           <Image
             className="opacity-50 transition group-hover:translate-y-1 group-hover:scale-95 group-hover:opacity-100"
