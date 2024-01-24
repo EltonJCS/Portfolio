@@ -6,20 +6,13 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+import { useSectionInView } from "../../lib/hooks";
 import SectionHeading from "./section-heading";
 
 import iconGraduation from "../../public/icons/graduation.jsx";
 import iconWork from "../../public/icons/work.jsx";
 
 const experiencesData = [
-  {
-    title: "Bacharel em Ciência da Computação",
-    location: "FACAPE",
-    description:
-      "Conclui o curso de Ciência da Computação onde ganhei conhecimento em: algoritmos, estrutura de dados, POO, banco de dados, lógica para computação, sistemas operacionais, compiladores, redes, programação funcional teoria dos grafos, IHC, engenharia de software, sistemas distribuídos, etc.",
-    icon: React.createElement(iconGraduation),
-    date: "2019 - 2023",
-  },
   {
     title: "Desenvolvedor Front-end",
     location: "InovaTechJr",
@@ -28,11 +21,21 @@ const experiencesData = [
     icon: React.createElement(iconWork),
     date: "2021 - 2023",
   },
+  {
+    title: "Bacharel em Ciência da Computação",
+    location: "FACAPE",
+    description:
+      "Conclui o curso de Ciência da Computação onde ganhei conhecimento em: algoritmos, estrutura de dados, POO, banco de dados, lógica para computação, sistemas operacionais, compiladores, redes, programação funcional teoria dos grafos, IHC, engenharia de software, sistemas distribuídos, etc.",
+    icon: React.createElement(iconGraduation),
+    date: "2019 - 2023",
+  },
 ] as const;
 
 const Experience = () => {
+  const { ref } = useSectionInView("Experiência");
+
   return (
-    <section id="experiência">
+    <section ref={ref} id="experiência" className="mb-28 scroll-mt-28 sm:mb-40">
       <SectionHeading title="Experiência" />
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
