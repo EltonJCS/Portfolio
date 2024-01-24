@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { useSectionInView } from "../../lib/hooks";
+import { sendEmail } from "@/app/actions/sendEmail";
 
 import SectionHeading from "./section-heading";
 
@@ -36,7 +37,12 @@ const Contact = () => {
         ou por meio do formulário.
       </p>
 
-      <form className="mt-10 flex flex-col" action="">
+      <form
+        className="mt-10 flex flex-col"
+        action={async (formData) => {
+          await sendEmail(formData);
+        }}
+      >
         <input
           className="h-14 rounded-lg border border-black/10 px-4"
           name="senderEmail"
