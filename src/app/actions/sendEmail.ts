@@ -50,7 +50,7 @@ export const sendEmail = async (formData: FormData) => {
     await resend.emails.send({
       from: "Portfolio contact form <onboarding@resend.dev>",
       to: "eltjcs@gmail.com",
-      subject: "Portfolio form email",
+      subject: "Portfolio contact",
       reply_to: senderEmail as string,
       text: message as string,
     });
