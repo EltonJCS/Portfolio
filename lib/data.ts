@@ -65,3 +65,19 @@ export const projectsData = [
     repository: "https://github.com/EltonJCS/java_restAPI_clientCRUD",
   },
 ] as const;
+
+export const skillsData = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "Tailwind",
+  "Node.js",
+  "MySQL",
+  "Styled Components",
+  "CSS",
+  "HTML",
+  "Git/Github",
+  "Figma",
+  "Framer Motion",
+] as const;

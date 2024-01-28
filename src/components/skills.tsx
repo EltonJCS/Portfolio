@@ -2,23 +2,9 @@
 import { motion } from "framer-motion";
 import { useSectionInView } from "../../lib/hooks";
 
-import SectionHeading from "./section-heading";
+import { skillsData } from "../../lib/data";
 
-const skillsData = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "JavaScript",
-  "Tailwind",
-  "Node.js",
-  "MySQL",
-  "Styled Components",
-  "CSS",
-  "HTML",
-  "Git/Github",
-  "Figma",
-  "Framer Motion",
-] as const;
+import SectionHeading from "./section-heading";
 
 const Skills = () => {
   const { ref } = useSectionInView("Habilidades", 1);
