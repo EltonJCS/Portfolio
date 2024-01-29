@@ -37,17 +37,18 @@ export const sendEmail = async (formData: FormData) => {
 
   if (!validateString(senderEmail, 320)) {
     return {
-      error: "Invalid form sender email",
+      error: "Email inválido!",
     };
   }
   if (!validateString(message, 2500)) {
     return {
-      error: "Invalid form message",
+      error: "Mensagem inválida!",
     };
   }
 
+  let data;
   try {
-    await resend.emails.send({
+    data = await resend.emails.send({
       from: "Portfolio contact form <onboarding@resend.dev>",
       to: "eltjcs@gmail.com",
       subject: "Portfolio contact",
@@ -59,4 +60,8 @@ export const sendEmail = async (formData: FormData) => {
       error: getErrorMessage(error),
     };
   }
+
+  return {
+    data,
+  };
 };
