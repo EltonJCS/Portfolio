@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import toast from "react-hot-toast";
 
 import { useSectionInView } from "../../lib/hooks";
 import { sendEmail } from "@/app/actions/sendEmail";
 
 import SectionHeading from "./section-heading";
+import SubmitBtn from "./submit-btn";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contato");
@@ -40,7 +41,18 @@ const Contact = () => {
       <form
         className="mt-10 flex flex-col"
         action={async (formData) => {
-          await sendEmail(formData);
+          const { data, error } = await sendEmail(formData);
+
+          if (error) {
+            toast.error(error);
+            return;
+          }
+          if (!data) {
+            toast.error("Erro! Email não enviado!");
+            return;
+          }
+
+          toast.success("Email enviado!");
         }}
       >
         <input
@@ -59,20 +71,7 @@ const Contact = () => {
           placeholder="Sua mensagem"
           required
         ></textarea>
-        <button
-          className="group flex h-[3rem] w-[8rem] items-center justify-center gap-1 rounded-full bg-slate-900 text-white outline-none transition-all hover:scale-110 hover:bg-slate-950 focus:scale-110 active:scale-105"
-          type="submit"
-        >
-          Enviar{" "}
-          <Image
-            className="opacity-90 invert transition-all group-hover:translate-x-2 group-hover:scale-125"
-            src="/icons/send.svg"
-            alt=""
-            width={20}
-            height={20}
-            quality={100}
-          />
-        </button>
+        <SubmitBtn />
       </form>
     </motion.section>
   );
