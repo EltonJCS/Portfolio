@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import BackgroundOverlay from "@/components/background-overlay";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ThemeSwitch from "@/components/theme-switch";
 
 import ActiveSectionContextProvider from "../../context/active-section-context";
 
@@ -28,13 +29,15 @@ export default function RootLayout({
       <body
         className={`${inter.className}  relative overscroll-none bg-slate-200 pt-28 text-slate-950 sm:pt-36`}
       >
-        <BackgroundOverlay />
         <ActiveSectionContextProvider>
           <Header />
           {children}
           <Footer />
-          <Toaster position="bottom-center" />
         </ActiveSectionContextProvider>
+
+        <Toaster position="bottom-center" />
+        <BackgroundOverlay />
+        <ThemeSwitch />
       </body>
     </html>
   );
