@@ -17,12 +17,10 @@ const About = () => {
       transition={{ delay: 0.5 }}
     >
       <SectionHeading title="Sobre Mim" />
-      <p className="mb-3">
-        Graduado em Ciência da Computação e atuando como desenvolvedor
-        front-end.
-        <br /> Criar, depurar, centralizar, ler documentação, procurar soluções
-        e resolver problemas. Tudo vale a pena quando nossos objetivos são
-        alcançados.
+      <p className="mb-3 dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.2)]">
+        Desenvolvedor front-end e graduado em Ciência da Computação.
+        <br /> Planejar, criar, depurar, procurar soluções e resolver problemas.
+        Tudo vale a pena quando nossos objetivos são alcançados.
       </p>
     </motion.section>
   );

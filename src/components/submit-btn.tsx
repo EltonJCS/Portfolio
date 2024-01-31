@@ -6,7 +6,7 @@ const SubmitBtn = () => {
 
   return (
     <button
-      className="group flex h-[3rem] w-[8rem] items-center justify-center gap-1 rounded-full bg-slate-900 text-white outline-none transition-all hover:scale-110 hover:bg-slate-950 focus:scale-110 active:scale-105 disabled:scale-100 disabled:bg-opacity-60"
+      className="group flex h-[3rem] w-[8rem] items-center justify-center gap-1 rounded-full bg-slate-900 text-white outline-none transition-all hover:scale-110 hover:bg-slate-950 focus:scale-110 active:scale-105 disabled:scale-100 disabled:bg-opacity-60 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-50"
       disabled={pending}
       type="submit"
     >
@@ -16,7 +16,7 @@ const SubmitBtn = () => {
         <>
           Enviar{" "}
           <Image
-            className="opacity-90 invert transition-all group-hover:translate-x-2 group-hover:scale-125"
+            className="opacity-90 invert transition-all group-hover:translate-x-2 group-hover:scale-125 dark:invert-0"
             src="/icons/send.svg"
             alt=""
             width={20}

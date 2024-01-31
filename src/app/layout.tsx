@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="!scroll-smooth">
       <body
-        className={`${inter.className}  relative overscroll-none bg-slate-200 pt-28 text-slate-950 sm:pt-36`}
+        className={`${inter.className}  relative overscroll-none bg-slate-200 pt-28 text-slate-950 selection:bg-slate-800 selection:text-slate-100 dark:bg-slate-950 dark:text-slate-100 dark:selection:bg-slate-100 dark:selection:text-slate-800 sm:pt-36`}
       >
         <ActiveSectionContextProvider>
           <Header />

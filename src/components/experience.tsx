@@ -32,7 +32,7 @@ const experiencesData = [
 ] as const;
 
 const Experience = () => {
-  const { ref } = useSectionInView("Experiência");
+  const { ref } = useSectionInView("Experiência", 0.6);
 
   return (
     <section ref={ref} id="experiência" className="mb-28 scroll-mt-28 sm:mb-40">

@@ -30,15 +30,19 @@ const Project = ({
     <motion.article
       ref={ref}
       style={{ scale: scrollYProgress, opacity: scrollYProgress }}
-      className="group relative mb-3 max-w-[42rem] overflow-clip border border-black/5 bg-slate-100 shadow-xl transition last:mb-0 even:pl-8 hover:bg-slate-100/50 sm:mb-8 sm:h-[20rem] sm:pr-8"
+      className="group relative mb-3 max-w-[42rem] overflow-clip rounded-lg border border-black/5 bg-slate-50 shadow-xl transition last:mb-0 even:pl-8 hover:bg-slate-100/50 hover:shadow-[0_0_8px_rgba(0,0,0,0.2)] dark:bg-slate-100/10 dark:hover:shadow-[0_0_8px_rgba(255,255,255,0.4)] sm:mb-8 sm:h-[20rem] sm:pr-8"
     >
       <div className="flex h-full flex-col px-5 pb-7 pt-4 group-even:ml-[18rem] sm:max-w-[50%] sm:pl-10 sm:pr-2 sm:pt-10">
-        <h3 className="text-2xl font-semibold">{title}</h3>
-        <p className="mt-2 leading-relaxed text-slate-700">{description}</p>
+        <h3 className="text-2xl font-semibold drop-shadow-[0_0_16px_rgba(0,0,0,0.4)] dark:drop-shadow-[0_0_16px_rgba(255,255,255,0.4)]">
+          {title}
+        </h3>
+        <p className="mt-2 leading-relaxed text-slate-700 dark:text-slate-200">
+          {description}
+        </p>
         <ul className="mt-4 flex flex-wrap gap-2 sm:mt-auto">
           {tags.map((tag, index) => (
             <li
-              className="rounded-full bg-slate-600 px-3 py-1 text-[0.7rem] font-bold tracking-wider text-white"
+              className="select-all rounded-full bg-slate-500 px-3 py-1 text-[0.65rem] font-bold tracking-wider text-slate-100/90 hover:bg-slate-500/80 hover:text-slate-50"
               key={index}
             >
               {tag}
@@ -50,12 +54,12 @@ const Project = ({
             <a href={demo} target="_blank">
               <button
                 type="button"
-                className="mb-2 flex items-center gap-1  rounded-lg border border-black/50 bg-white py-2 pl-3 pr-5 text-center text-sm font-medium text-slate-900 hover:bg-slate-300/50 focus:outline-none  active:bg-slate-400/50"
+                className="mb-2 flex items-center gap-1 rounded-lg  border border-black/50 bg-white py-2 pl-3 pr-5 text-center text-sm font-medium text-slate-900 shadow-md hover:bg-slate-300/50 focus:outline-none  active:bg-slate-400/50"
               >
                 <Image
                   className="self-end"
                   src="/icons/preview.svg"
-                  alt="Github"
+                  alt="Visualizar projeto"
                   width={16}
                   height={16}
                   quality={100}
@@ -69,11 +73,12 @@ const Project = ({
           <a href={repository} target="_blank">
             <button
               type="button"
-              className="mb-2 flex items-center gap-1  rounded-lg border border-white/50 bg-slate-800 py-2 pl-3 pr-5 text-center text-sm font-medium text-slate-100 hover:bg-slate-600 focus:outline-none active:bg-slate-700"
+              className="mb-2 flex items-center gap-1 rounded-lg border border-white/25 bg-slate-800 py-2 pl-3 pr-5 text-center text-sm font-medium text-slate-100 shadow-md hover:bg-slate-700 focus:outline-none active:bg-slate-600 dark:bg-slate-900 dark:hover:bg-slate-800 dark:active:bg-slate-600"
             >
               <Image
+                className="invert"
                 src="/icons/github.svg"
-                alt="Github"
+                alt="Repositório do projeto"
                 width={16}
                 height={16}
                 quality={100}

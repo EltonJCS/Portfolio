@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="relative z-50">
       <motion.div
-        className="fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[42rem] sm:rounded-full"
+        className="fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none border-x-0 border-white/40 bg-white bg-opacity-80 shadow-lg shadow-slate-950/20 backdrop-blur-[0.5rem] dark:border-slate-600/40 dark:bg-slate-950 dark:bg-opacity-70 dark:shadow-slate-600/20 sm:top-6 sm:h-[3.25rem] sm:w-[42rem] sm:rounded-full sm:border"
         initial={{ x: "-50%", y: -100, opacity: 0 }}
         animate={{ x: "-50%", y: 0, opacity: 1 }}
       ></motion.div>
@@ -26,8 +26,10 @@ const Header = () => {
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
-                className={`text-slate-950" flex w-full items-center justify-center px-3 py-3 transition hover:text-slate-950 ${
-                  activeSection === link.name ? "text-slate-950" : ""
+                className={`flex w-full items-center justify-center px-3 py-1 transition hover:text-slate-950  dark:hover:text-slate-300 sm:py-3  ${
+                  activeSection === link.name
+                    ? "text-slate-950 dark:text-slate-200"
+                    : ""
                 }`}
                 href={link.hash}
                 onClick={() => {
@@ -38,7 +40,7 @@ const Header = () => {
                 {link.name}
                 {link.name === activeSection && (
                   <motion.span
-                    className="absolute inset-0 -z-10 rounded-full bg-slate-200 shadow-inner"
+                    className="absolute inset-0 -z-10 rounded-full bg-slate-200 shadow-inner dark:bg-slate-900 dark:shadow-[0_0_4px_rgba(255,255,255,0.2)_inset]"
                     layoutId="activeSection"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   ></motion.span>

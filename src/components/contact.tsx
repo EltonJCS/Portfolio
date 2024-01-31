@@ -30,9 +30,12 @@ const Contact = () => {
       }}
     >
       <SectionHeading title="Contato" />
-      <p className="text-slate-700">
+      <p className="text-slate-700 dark:text-slate-200 dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.2)]">
         Entre em contato diretamente em{" "}
-        <a className="underline" href="mailto:eltjcs@gmail.com">
+        <a
+          className="text-slate-900 underline dark:text-slate-50"
+          href="mailto:eltjcs@gmail.com"
+        >
           eltjcs@gmail.com
         </a>{" "}
         ou por meio do formulário.
@@ -56,7 +59,7 @@ const Contact = () => {
         }}
       >
         <input
-          className="h-14 rounded-lg border border-black/10 px-4"
+          className="h-14 rounded-lg border border-black/10 px-4 shadow-[0_0_4px_rgba(0,0,0,0.4)_inset] dark:border-slate-600 dark:bg-slate-800 dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.2)]"
           name="senderEmail"
           type="email"
           maxLength={320}
@@ -64,7 +67,7 @@ const Contact = () => {
           required
         />
         <textarea
-          className="my-3 h-52 rounded-lg border border-black/10 p-4 "
+          className="my-3 h-52 rounded-lg border border-black/10 p-4 shadow-[0_0_4px_rgba(0,0,0,0.4)_inset] dark:border-slate-600 dark:bg-slate-800 dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.2)]"
           name="message"
           maxLength={2500}
           minLength={25}

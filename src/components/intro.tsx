@@ -18,6 +18,7 @@ export default function Intro() {
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
+            className="drop-shadow-[0_0_8px_rgba(0,0,0,0.4)] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "tween", duration: 0.5 }}
@@ -28,7 +29,7 @@ export default function Intro() {
               width={160}
               height={160}
               quality={90}
-              className="h-[10rem] w-[10rem] rounded-full border-[0.35rem] border-white object-cover shadow-xl"
+              className="h-[10rem] w-[10rem] rounded-full border-4 border-white object-cover"
             />
           </motion.div>
           <motion.span
@@ -55,16 +56,17 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium text-white drop-shadow-md sm:text-4xl"
+        className="mb-10 mt-4 px-4 text-2xl font-medium text-white drop-shadow-md dark:text-slate-400 dark:drop-shadow-[0_0_4px_rgba(255,255,255,0.2)] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Me chamo <b className="text-slate-800">Elton</b>{" "}
-        <b className="text-slate-800">Jatobá</b> e sou um{" "}
-        <b className="text-slate-800">
+        Me chamo <b className="text-slate-800 dark:text-slate-100">Elton</b>{" "}
+        <b className="text-slate-800 dark:text-slate-100">Jatobá</b> e sou um{" "}
+        <b className="text-slate-800 dark:text-slate-100">
           desenvolvedor <i>front-end</i>{" "}
         </b>
-        com foco em <b className="text-slate-800">React (Next.js).</b>
+        com foco em{" "}
+        <b className="text-slate-800 dark:text-slate-100">React (Next.js).</b>
       </motion.h1>
 
       <motion.div
@@ -75,7 +77,7 @@ export default function Intro() {
       >
         <Link
           href="#contato"
-          className="group flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-white shadow-xl outline-none transition hover:scale-110 hover:bg-slate-800 active:scale-105 active:bg-slate-950"
+          className="group flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-slate-100 shadow-xl transition hover:scale-110 hover:bg-slate-800 active:scale-105 active:bg-slate-950 dark:bg-slate-950 dark:shadow-[0_0_4px_rgba(255,255,255,0.1)] dark:hover:bg-slate-900 dark:active:bg-black"
           onClick={() => {
             setActiveSection("Contato");
             setTimeOfLastClick(Date.now());
@@ -92,10 +94,10 @@ export default function Intro() {
           />
         </Link>
 
-        <a className="group flex cursor-pointer items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-slate-900 shadow-xl outline-none transition hover:scale-110 focus:scale-110 active:scale-105 active:bg-slate-300">
+        <a className="group flex cursor-pointer items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-slate-900 shadow-xl transition hover:scale-110 hover:bg-white/50 focus:scale-110 active:scale-105 active:bg-slate-300 dark:bg-slate-100/10 dark:text-slate-100 dark:shadow-[0_0_8px_2px_rgba(0,0,0,0.2)_inset] dark:hover:bg-slate-100/25 dark:active:bg-slate-100/50">
           Currículo
           <Image
-            className="opacity-50 transition group-hover:translate-y-1 group-hover:scale-95 group-hover:opacity-100"
+            className="opacity-50 transition group-hover:translate-y-1 group-hover:scale-95 group-hover:opacity-100 dark:invert"
             src="/icons/download.svg"
             alt=""
             width={24}
@@ -106,13 +108,13 @@ export default function Intro() {
 
         <a
           href="https://www.linkedin.com/in/eltonjcs"
-          className="group flex items-center gap-2 rounded-full border border-black/20 bg-white p-4 text-slate-900 shadow-xl transition active:scale-105 active:bg-slate-400"
+          className="group flex items-center gap-2 rounded-full border border-black/20 bg-white p-4 text-slate-900 shadow-xl transition active:scale-105 active:bg-slate-400 dark:bg-slate-100/10"
           target="_blank"
         >
           <Image
-            className="opacity-80 transition group-hover:scale-[2.5] group-hover:opacity-100"
+            className="opacity-80 saturate-50 transition hover:saturate-100 group-hover:scale-[2.5] group-hover:opacity-100"
             src="/icons/linkedin.svg"
-            alt=""
+            alt="LinkedIn"
             width={24}
             height={24}
             quality={100}
@@ -120,13 +122,13 @@ export default function Intro() {
         </a>
         <a
           href="https://www.github.com/eltonjcs"
-          className="group flex items-center gap-2 rounded-full border border-black/20 bg-white p-4 text-slate-900 shadow-xl transition active:scale-105 active:bg-slate-400"
+          className="group flex items-center gap-2 rounded-full border border-black/20 bg-white p-4 text-slate-900 shadow-xl transition active:scale-105 active:bg-slate-400 dark:bg-slate-100/10"
           target="_blank"
         >
           <Image
-            className="opacity-80 transition group-hover:scale-[2.5] group-hover:opacity-100"
+            className="opacity-80 transition group-hover:scale-[2.5] group-hover:opacity-100 dark:invert"
             src="/icons/github.svg"
-            alt=""
+            alt="Github"
             width={24}
             height={24}
             quality={100}
