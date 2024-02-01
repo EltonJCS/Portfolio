@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
+import ActiveSectionContextProvider from "../../context/active-section-context";
+import ThemeContextProvider from "../../context/theme-context";
+
 import BackgroundOverlay from "@/components/background-overlay";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
-
-import ActiveSectionContextProvider from "../../context/active-section-context";
 
 import "./globals.css";
 
@@ -29,15 +30,17 @@ export default function RootLayout({
       <body
         className={`${inter.className}  relative overscroll-none bg-slate-200 pt-28 text-slate-950 selection:bg-slate-800 selection:text-slate-100 dark:bg-slate-950 dark:text-slate-100 dark:selection:bg-slate-100 dark:selection:text-slate-800 sm:pt-36`}
       >
-        <ActiveSectionContextProvider>
-          <Header />
-          {children}
-          <Footer />
-        </ActiveSectionContextProvider>
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ActiveSectionContextProvider>
+          <ThemeSwitch />
+        </ThemeContextProvider>
 
         <Toaster position="bottom-center" />
         <BackgroundOverlay />
-        <ThemeSwitch />
       </body>
     </html>
   );
