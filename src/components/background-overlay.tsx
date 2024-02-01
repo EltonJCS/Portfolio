@@ -18,7 +18,7 @@ const BackgroundOverlay = () => {
       <motion.div
         className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-blue-200 blur-[10rem] dark:bg-blue-950 sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"
         initial={{ opacity: 1, x: 0, y: 50 }}
-        animate={{ opacity: 0.5, x: 150, y: -50 }}
+        animate={{ opacity: 0.5, x: 50, y: -50 }}
         transition={{
           delay: 0.5,
           duration: 2,
