@@ -2,12 +2,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+
 import { useSectionInView } from "../../lib/hooks";
 import { useActiveSectionContext } from "../../context/active-section-context";
+import { useThemeContext } from "../../context/theme-context";
 
 export default function Intro() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref } = useSectionInView("Início", 0.5);
+  const { theme } = useThemeContext();
 
   return (
     <section
@@ -24,7 +27,7 @@ export default function Intro() {
             transition={{ type: "tween", duration: 0.5 }}
           >
             <Image
-              src="/images/avatar-light.png"
+              src={`/images/avatar-${theme}.png`}
               alt="Foto de perfil"
               width={160}
               height={160}
