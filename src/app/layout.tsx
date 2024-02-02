@@ -11,6 +11,7 @@ import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
 
 import "./globals.css";
+import ProgressBar from "@/components/progress-bar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,7 @@ export default function RootLayout({
 
         <Toaster position="bottom-center" />
         <BackgroundOverlay />
+        <ProgressBar />
       </body>
     </html>
   );
