@@ -50,7 +50,7 @@ export const projectsData = [
     title: "MyLinks",
     description:
       "Site agregador de links que permite o compartilhamento de redes sociais, sites e outros links importantes em um único lugar.",
-    tags: ["Java", "Spark"],
+    tags: ["JavaScript", "CSS", "HTML"],
     imageURL: projectMyLinks,
     demo: "https://eltonjcs.github.io/MyLinks",
     repository: "https://github.com/EltonJCS/MyLinks",
@@ -59,7 +59,7 @@ export const projectsData = [
     title: "java_restAPI",
     description:
       "API REST em Java com funcionalidades de CRUD, utilizando o microframework Spark.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    tags: ["Java", "Spark"],
     imageURL: projectJavaRestAPI,
     demo: "",
     repository: "https://github.com/EltonJCS/java_restAPI_clientCRUD",
