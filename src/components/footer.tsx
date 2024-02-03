@@ -16,9 +16,9 @@ const Footer = () => {
           <linearGradient id="gradientWave" x1="0" x2="0" y1="0" y2="1">
             <stop
               offset="5%"
-              stop-color={theme === "dark" ? "#000" : "#fff"}
+              stopColor={theme === "dark" ? "#000" : "#fff"}
             ></stop>
-            <stop offset="95%" stop-color="#6525ff"></stop>
+            <stop offset="95%" stopColor="#6525ff"></stop>
           </linearGradient>
           <pattern
             id="wave"
@@ -47,22 +47,22 @@ const Footer = () => {
           </pattern>
         </defs>
         <text
-          text-anchor="middle"
-          font-size="14px"
+          textAnchor="middle"
+          fontSize="14px"
           x="27px"
           y="16px"
           fill="url(#wave)"
-          fill-opacity="1.0"
+          fillOpacity="1.0"
         >
           Desenvolvido com ☕ por EltonJCS
         </text>
         <text
-          text-anchor="middle"
-          font-size="14px"
+          textAnchor="middle"
+          fontSize="14px"
           x="27px"
           y="16px"
           fill="url(#gradientWave)"
-          fill-opacity="0.4"
+          fillOpacity="0.4"
         >
           Desenvolvido com ☕ por EltonJCS
         </text>

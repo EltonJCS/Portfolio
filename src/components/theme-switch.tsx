@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
       onClick={toggleTheme}
     >
       <Image
-        className="opacity-100 transition-all dark:invert"
+        className="animate-[spin_6s_linear_infinite] opacity-100 transition-all dark:animate-[pulse_1s_linear_infinite] dark:invert"
         src={`/icons/mode-${theme}.svg`}
         alt=""
         width={20}
