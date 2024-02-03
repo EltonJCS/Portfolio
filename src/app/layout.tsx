@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Toaster } from "react-hot-toast";
 
 import ActiveSectionContextProvider from "../../context/active-section-context";
 import ThemeContextProvider from "../../context/theme-context";
 
-import BackgroundOverlay from "@/components/background-overlay";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
+import ProgressBar from "@/components/progress-bar";
+import BackgroundOverlay from "@/components/background-overlay";
 
 import "./globals.css";
-import ProgressBar from "@/components/progress-bar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,9 +39,8 @@ export default function RootLayout({
           <ThemeSwitch />
         </ThemeContextProvider>
 
-        <Toaster position="bottom-center" />
-        <BackgroundOverlay />
         <ProgressBar />
+        <BackgroundOverlay />
       </body>
     </html>
   );
