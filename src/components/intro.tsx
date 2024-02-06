@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useSectionInView } from "../../lib/hooks";
+import { use3DHoverEffect, useSectionInView } from "../../lib/hooks";
 import { useActiveSectionContext } from "../../context/active-section-context";
 import { useThemeContext } from "../../context/theme-context";
 
@@ -11,6 +11,8 @@ export default function Intro() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref } = useSectionInView("Início", 0.5);
   const { theme } = useThemeContext();
+  const { handleMouseMove, handleMouseLeave, handleMouseEnter } =
+    use3DHoverEffect(60);
 
   return (
     <section
@@ -18,8 +20,13 @@ export default function Intro() {
       id="início"
       className="mb-28 max-w-[50rem] scroll-mt-80 text-center sm:mb-0"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative">
+      <div className="flex items-center justify-center [perspective:800px]">
+        <div
+          className="relative transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.2)]"
+          onMouseEnter={handleMouseEnter}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
           <motion.div
             className="drop-shadow-[0_0_8px_rgba(0,0,0,0.4)] dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
             initial={{ opacity: 0, scale: 0 }}
@@ -32,6 +39,7 @@ export default function Intro() {
               width={160}
               height={160}
               quality={90}
+              priority
               className="h-[10rem] w-[10rem] rounded-full border-4 border-white object-cover"
             />
           </motion.div>
@@ -63,8 +71,9 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Me chamo <b className="text-slate-800 dark:text-slate-100">Elton</b>{" "}
-        <b className="text-slate-800 dark:text-slate-100">Jatobá</b> e sou um{" "}
+        Me chamo{" "}
+        <b className="text-slate-800 dark:text-slate-100">Elton Jatobá</b> e sou
+        um{" "}
         <b className="text-slate-800 dark:text-slate-100">
           desenvolvedor <i>front-end</i>{" "}
         </b>
@@ -80,7 +89,7 @@ export default function Intro() {
       >
         <Link
           href="#contato"
-          className="group flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-slate-100 shadow-xl transition hover:scale-110 hover:bg-slate-800 active:scale-105 active:bg-slate-950 dark:bg-slate-950 dark:shadow-[0_0_4px_rgba(255,255,255,0.1)] dark:hover:bg-slate-900 dark:active:bg-black"
+          className="group flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-slate-100 shadow-xl outline outline-1 -outline-offset-4 outline-slate-100/10 transition hover:scale-110 hover:bg-slate-800 active:scale-105 active:bg-slate-950 dark:bg-slate-950 dark:shadow-[0_0_4px_rgba(255,255,255,0.1)] dark:hover:bg-slate-900 dark:active:bg-black"
           onClick={() => {
             setActiveSection("Contato");
             setTimeOfLastClick(Date.now());
