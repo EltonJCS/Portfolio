@@ -17,10 +17,10 @@ const Skills = () => {
     <section
       ref={ref}
       id="habilidades"
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center"
+      className="max-w-[53rem] scroll-mt-28 text-center"
     >
       <SectionHeading title="Minhas Habilidades" />
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-slate-900 [perspective:800px] sm:mb-40">
+      <ul className="flex flex-wrap justify-center gap-2 text-lg text-slate-900 [perspective:800px]">
         {skillsData.map((skill, index) => (
           <motion.li
             className="group relative cursor-default select-all rounded-xl border border-black/10 bg-slate-100 px-5 py-3 shadow-[-1px_-1px_1px_rgba(0,0,0,0.4)_inset] transition-transform ease-out hover:bg-slate-300 hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.2)] dark:bg-slate-800 dark:text-slate-200 dark:shadow-[1px_1px_1px_rgba(255,255,255,0.4)_inset] dark:hover:bg-slate-950"

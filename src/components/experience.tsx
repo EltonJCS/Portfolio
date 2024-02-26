@@ -38,7 +38,7 @@ const Experience = () => {
   const { theme } = useThemeContext();
 
   return (
-    <section ref={ref} id="experiência" className="mb-28 scroll-mt-28 sm:mb-40">
+    <section ref={ref} id="experiência" className="scroll-mt-28">
       <SectionHeading title="Experiência" />
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
