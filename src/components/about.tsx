@@ -25,22 +25,19 @@ const About = () => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <p className="mb-3 antialiased drop-shadow-[0_0_1px_rgba(255,255,255,0.4)]">
+        <p className="mb-3 text-lg antialiased drop-shadow-[0_0_1px_rgba(255,255,255,0.4)]">
           <b>Desenvolvedor front-end</b> e graduado em Ciência da Computação.
-          <br className="mb-1" /> Tenho maior conhecimento em desenvolvimento
+          <br className="mb-2" /> Tenho maior conhecimento em desenvolvimento
           web com <b>React</b>, <b>Typescript</b>, <b>Tailwind</b> e{" "}
           <b>Next.js</b>.
-          <br className="mb-1" /> Apesar de trilhar um caminho voltado para
+          <br className="mb-2" /> Apesar de trilhar um caminho voltado para
           front-end eu possuo conhecimento em back-end e posso participar em
-          projetos como desenvolvedor <b>full-stack</b>. <br className="mb-1" />
+          projetos como desenvolvedor <b>full-stack</b>. <br className="mb-2" />
           <b>Acredito</b> que é possível ser um bom profissional em qualquer
           área quando a procura de melhora é acompanhada de bom julgamento.
-          <br className="mb-1" />
+          <br className="mb-2" />
           <b>Me mantenho atualizado</b> por meio de vários canais de informação
           como: newsletters (emails), sites de notícias, YouTube, etc.
-          <br className="mb-1" />
-          Planejar, criar, testar, procurar soluções e resolver problemas. Tudo
-          vale a pena quando nossos <b>objetivos são alcançados</b>.
         </p>
       </div>
     </motion.section>
