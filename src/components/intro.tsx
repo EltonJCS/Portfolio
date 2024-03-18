@@ -106,7 +106,11 @@ export default function Intro() {
           />
         </Link>
 
-        <a className="group flex cursor-pointer items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-slate-900 shadow-xl transition hover:scale-110 hover:bg-white/50 focus:scale-110 active:scale-105 active:bg-slate-300 dark:bg-slate-100/10 dark:text-slate-100 dark:shadow-[0_0_8px_2px_rgba(0,0,0,0.2)_inset] dark:hover:bg-slate-100/25 dark:active:bg-slate-100/50">
+        <a
+          className="group flex cursor-pointer items-center gap-2 rounded-full border border-black/20 bg-white px-7 py-3 text-slate-900 shadow-xl transition hover:scale-110 hover:bg-white/50 focus:scale-110 active:scale-105 active:bg-slate-300 dark:bg-slate-100/10 dark:text-slate-100 dark:shadow-[0_0_8px_2px_rgba(0,0,0,0.2)_inset] dark:hover:bg-slate-100/25 dark:active:bg-slate-100/50"
+          href="/CV.pdf"
+          download="Currículo-Elton_Jatobá"
+        >
           Currículo
           <Image
             className="opacity-50 transition group-hover:translate-y-1 group-hover:scale-95 group-hover:opacity-100 dark:invert"
