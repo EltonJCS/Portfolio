@@ -1,4 +1,13 @@
-<h1 align=center>Portfólio</h1>
+<div align="center">
+  <h1><b>Portfólio</b></h1>
+  <a href="https://eltonjcs.vercel.app">
+    <p><b>Visualização ao vivo | <i>Live preview</i></b></p>
+    <img src="https://i.ibb.co/fCpTSs9/Elton-JCS-Portfolio.png" alt="Elton-JCS-Portfolio">
+    <img src="https://i.ibb.co/WKMJkKb/Elton-JCS-Portfolio-light.png" alt="Elton-JCS-Portfolio-light">
+  </a>
+</div>
+
+<br>
 
 ## Sobre | <i>About</i>
 <p>Este é o repositório do meu projeto de portfólio, onde compartilho minhas habilidades, projetos e experiências profissionais.</p>
