@@ -9,21 +9,21 @@
 
 <br>
 
-## Sobre | <i>About</i>
+<h2>Sobre | <i>About</i></h2>
 <p>Este é o repositório do meu projeto de portfólio, onde compartilho minhas habilidades, projetos e experiências profissionais.</p>
 <p><i>This is the repository for my portfolio project, where i share my skills, projects and professional experiences.</i></p>
 
 <br>
 
-## Tecnologias Utilizadas
-
-- React
-- Next.js (App Router & Server Actions)
-- TypeScript (tipagem)
-- Tailwind CSS (estilização)
-- Framer Motion (animações)
-- Resend (envio de emails)
-- Vercel (hospedagem)
+<h2>Tecnologias utilizadas | <i>Technologies Used</i></h2>
+<ul>
+  <li><b>React</b></li>
+  <li><b>Next.js</b> (app router e server actions)</li>
+  <li><b>TypeScript</b> (tipagem)</li>
+  <li><b>Tailwind</b> (estilização)</li>
+  <li><b>Framer Motion</b> (animações)</li>
+  <li><b>Resend</b> (envio de emails)</li>
+</ul>
 
 <hr>
 <p align="center">Feito com ☕ por <a href="https://github.com/eltonjcs">EltonJCS</a></p>
